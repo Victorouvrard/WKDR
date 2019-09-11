@@ -1,0 +1,68 @@
+<div class="container-all">
+    <div class="foo">
+  <span class="letter" data-letter="W">W</span>
+  <span class="letter" data-letter="K">K</span>
+  <span class="letter" data-letter="D">D</span>
+  <span class="letter" data-letter="R">R</span>
+</div>
+
+</div>
+<!-- Dropdown -->
+<div class="dropdown">
+  <button class="dropbtn btn-2">Filtre</button>
+  <div class="dropdown-content">
+    <a class="filter" id="water">Eau</a>
+    <a class="filter" id="banana">Bananes</a>
+    <a class="filter" id="transport">Ticket</a>
+  </div>
+</div>
+<!-- All cards  -->
+<div class="all-cards container-all">
+  <% @destinations.each do |destination| %>
+    <div class="destination-card grow">
+        <div class="destination-info">
+          <div class="destination-header">
+            <h2 id="destination-name"><%= destination.destination_name %></h2>
+
+          </div>
+          <p id="transport-price" class="btn hide">
+            <%= image_tag "train-ticket.svg", class: "info-icon" %>
+            <%= destination.transport_price%>
+          </p>
+
+          <p id="banana-price" class="btn hide">
+            <%= image_tag "banana.svg", class: "info-icon" %>
+            <%= destination.banana_price%>
+            <span class="mass-type">/kg</span>
+          </p>
+
+
+          <p id="water-price" class="btn hide">
+            <%= image_tag "water.svg", class: "info-icon" %>
+
+            <%= destination.water_price%>
+            <span class="mass-type">/1,5L</span>
+          </p>
+
+
+        </div>
+
+      <div class="bg">
+        <div class="destination-image">
+          <%= image_tag destination.photo_link, class: "photo-link" %>
+        </div>
+
+        <div class="bg-svg">
+          <svg class="svg-sep" viewBox="0 0 46 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H46L0 211V0Z" fill="#F5F5F5"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
+<div class="footer container-all">
+
+</div>
